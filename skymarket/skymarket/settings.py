@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "redoc",
     "corsheaders",
     "drf_spectacular",
+    "djoser",
 ]
 
 
@@ -87,7 +88,10 @@ REST_FRAMEWORK = {
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
 # TODO здесь мы настраиваем Djoser
-DJOSER = {
+DJOSER = {'SERIALIZERS': {
+        'user_create': 'users.serializers.UserRegistrationSerializer'
+    },
+    'LOGIN_FIELD': 'email'
 }
 
 # Database
